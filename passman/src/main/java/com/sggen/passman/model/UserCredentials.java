@@ -1,4 +1,18 @@
 package com.sggen.passman.model;
 
-public record UserCredentials(String username, String password_hash, String password_salt) {
+public class UserCredentials {
+    private String passwordHash;
+    private String passwordSalt;
+
+    public UserCredentials(String username, String passwordHash, String passwordSalt) {
+    	this.passwordHash = passwordHash;
+        this.passwordSalt = passwordSalt;
+    }
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public String getPasswordSalt() {
+        return passwordSalt;
+    }
 }
